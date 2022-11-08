@@ -2,7 +2,7 @@ import requests
 import json
 import pandas as pd
 
-search_url = "https://api.twitter.com/2/users/44196397/tweets?max_results=6&pagination_token=7140dibdnow9c7btw4232twnluqa1fddrkv35qibt8th1"
+search_url = "https://api.twitter.com/2/users/155584627/tweets?max_results=6&pagination_token=7140dibdnow9c7btw4232twnluqa1fddrkv35qibt8th1"
 
 # Optional params: start_time,end_time,since_id,until_id,max_results,next_token,
 # expansions,tweet.fields,media.fields,poll.fields,place.fields,user.fields
@@ -20,7 +20,7 @@ query_params = { #'query': keyword,
                 }
 
 def bearer_oauth(r):
-    r.headers["Authorization"] = f"Bearer {bearer_token}"
+    r.headers["Authorization"] = f"Bearer {'AAAAAAAAAAAAAAAAAAAAAIJzOQEAAAAAFZS0RG%2Blcaga154yEHMq7F6VbDY%3DYWv6Zea0cyjaqFN1bCRGEAKeIvojewrRBZ9lcZjGQQj5TWQqpl'}"
     r.headers["User-Agent"] = "v2RecentSearchPython"
     return r
 
