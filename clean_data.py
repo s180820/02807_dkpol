@@ -3,8 +3,9 @@ import numpy as np
 import nltk
 from Data.twitter_ids import twitter_ids
 
+# IDEA use MapReduce to collect and clean csv's
 
-STOPWORDS = nltk.corpus.stopwords.words('danish')
+STOPWORDS = nltk.corpus.stopwords.words('danish') # consider also removing enmglish stopwords
 more_stopwords = ["http", "jeg", "dig", "vi", "gang", "dit", "kan", "de", "rt", "nåh"]
 STOPWORDS.extend(more_stopwords)
 
