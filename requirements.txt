@@ -1,0 +1,7 @@
+spacy
+mrjob==0.7.4
+simplemma
+tqdm
+nltk
+wordcloud
+sklearn
