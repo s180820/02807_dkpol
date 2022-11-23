@@ -18,8 +18,8 @@ twitter_ids = {
     },
     "moderaterne" : {
         "lars_lokke" : "26201346",
-        "henrik_frandsen" : "1249019841924734977",
-        "rosa_eriksen" : "1560192117858861056",
+        # "henrik_frandsen" : "1249019841924734977",
+        # "rosa_eriksen" : "1560192117858861056",
     },
     "sf" : {
         "jacob_mark" : "2373406198",
@@ -36,7 +36,7 @@ twitter_ids = {
         "alex_vanopslagh" : "1531564633",
         # "henrik_dahl" : None,
         "ole_olesen" : "2222188479",
-        "solbjorg_jakobsen" : "1548641745264644099",
+        # "solbjorg_jakobsen" : "1548641745264644099",
     },
     "konservative" : {
         "soren_pape" : "2712091824",
