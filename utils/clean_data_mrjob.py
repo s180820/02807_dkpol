@@ -4,8 +4,9 @@ import nltk
 import os
 import re
 from utils.clean_data import clean_tweet
-from mr3px.csvprotocol import CsvProtocol
-from mr3px.keyedjson import KeyedJsonProtocol
+# from mr3px.csvprotocol import CsvProtocol
+# from mr3px.keyedjson import KeyedJsonProtocol
+from mrjob.protocol import JSONProtocol, RawValueProtocol
 
 STOPWORDS = nltk.corpus.stopwords.words('danish') # consider also removing enmglish stopwords
 more_stopwords = ["http", "jeg", "dig", "vi", "gang", "dit", "kan", "de", "rt", "nåh"]
@@ -23,37 +24,11 @@ def clean_tweet_mrjob(tweet):
 
     tweet = clean_tweet(tweet)
 
-    # # remove underscore
-    # tweet = re.sub('_', '', tweet)
-    # # Remove tags
-    # tweet = re.sub("@[A-Za-z0-9]+", " ", tweet)
-    # # Lowercase
-    # tweet = tweet.lower()
-    # # Remove stopwords
-    # tweet = ' '.join([word for word in tweet.split() if word not in (STOPWORDS)])
-    # # Remove URLs
-    # tweet = re.sub(r'http\S+', '', tweet)
-    # # Remove punctuation
-    # tweet = re.sub('[^\w\s]','', tweet)
-    # # Remove numbers
-    # tweet = re.sub('\d+', '', tweet)
-    # # remove new line
-    # tweet = tweet.replace('\n', '')
-    # # remove multiple spaces
-    # tweet = re.sub(' +', ' ', tweet)
-    # # remove leading and trailing spaces
-    # tweet = tweet.strip()
-    # # remove empty rows
-    # tweet = tweet if tweet != '' else None
-
-    # tweet = tweet.replace("\u00e6", "æ")
-
     return tweet
 
 
-from mrjob.protocol import JSONProtocol, RawValueProtocol
-import json
-# mrjob.protocol.RawValueProtocol
+
+
 class MRDataCleaner(MRJob):
     OUTPUT_PROTOCOL = RawValueProtocol  
     

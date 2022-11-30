@@ -20,6 +20,8 @@ twitter_ids = {
         "lars_lokke" : "26201346",
         # "henrik_frandsen" : "1249019841924734977",
         # "rosa_eriksen" : "1560192117858861056",
+        "jakob_engel_schmidt" : None,
+        "monika_rubin" : None,
     },
     "sf" : {
         "jacob_mark" : "2373406198",
@@ -34,7 +36,7 @@ twitter_ids = {
     },
     "liberal_alliance" : {
         "alex_vanopslagh" : "1531564633",
-        # "henrik_dahl" : None,
+        "henrik_dahl" : None,
         "ole_olesen" : "2222188479",
         # "solbjorg_jakobsen" : "1548641745264644099",
     },
@@ -68,4 +70,12 @@ twitter_ids = {
         "pia_kjarsgaard" : "1054640354690039809",
         "peter_kofod" : "1613378210"
     },
+    "others" : {
+        "Anders_Bjarklev" : None,
+        "Anders_Lund_Madsen" : None,
+        "DTU" : None,
+        "Michael_Kristiansen" : None,
+        "Peter_Mogensen" : None,
+        "Selma_Montgomery" : None,
+    }
 }
