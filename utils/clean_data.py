@@ -3,11 +3,13 @@ import numpy as np
 import nltk
 from Data.twitter_ids import twitter_ids
 import re
+import simplemma
 
 STOPWORDS = nltk.corpus.stopwords.words('danish') # consider also removing enmglish stopwords
-STOPWORDS.extend
-more_stopwords = ["http", "jeg", "dig", "vi", "gang", "dit", "kan", "de", "rt", "nåh", "så", "det"]
+STOPWORDS.extend(nltk.corpus.stopwords.words('english'))
+more_stopwords = ["http", "jeg", "dig", "vi", "gang", "dit", "kan", "de", "rt", "nåh", "så", "det", "tweets", "mig"]
 STOPWORDS.extend(more_stopwords)
+STOPWORDS.extend(["ste", "sto", "henholdsvis", "pga", "sep", "øh", "haha", "okay", "dfår", "att"]) # from wordclouds
 
 def clean_tweet(tweet):
     # remove emojis
@@ -20,8 +22,6 @@ def clean_tweet(tweet):
     tweet = re.sub("@[A-Za-z0-9]+", " ", tweet)
     # Lowercase
     tweet = tweet.lower()
-    # Remove stopwords
-    tweet = ' '.join([word for word in tweet.split() if word not in (STOPWORDS)])
     # Remove URLs
     tweet = re.sub(r'http\S+', '', tweet)
     # Remove punctuation
@@ -32,12 +32,16 @@ def clean_tweet(tweet):
     tweet = tweet.replace('\n', '')
     # remove multiple spaces
     tweet = re.sub(' +', ' ', tweet)
+    # Remove stopwords and endings on words 
+    tweet = ' '.join([simplemma.lemmatize(word, lang='da') for word in tweet.split() if word not in (STOPWORDS)])
     # remove leading and trailing spaces
     tweet = tweet.strip()
     # remove empty rows
     tweet = tweet if tweet != '' else None
 
+
     return tweet
+
 
 def remove_emoji(string):
     emoji_pattern = re.compile("["
