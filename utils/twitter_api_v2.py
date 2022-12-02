@@ -62,13 +62,13 @@ def write_to_csv(party, name, max_results = 100, pagination_token = None, query_
     all_tweets = get_all_tweets(user_id, max_results, query_params)
     df = pd.DataFrame(all_tweets, columns = ['tweets'])
     column_name = name.replace(" ", "_")
-    df.to_csv(f"src/Data/{party}/{column_name}.csv", index = False)
+    df.to_csv(f"02807_dkpol/Data/tweets/{party}/{column_name}.csv", index = False)
 
 def create_folders(twitter_ids):
     """.csv's are saved here"""
     for party in twitter_ids:
-        if not os.path.exists(f"Data/{party}"):
-            os.makedirs(f"Data/{party}")
+        if not os.path.exists(f"02807_dkpol/Data/tweets/{party}"):
+            os.makedirs(f"02807_dkpol/Data/tweets/{party}")
 
 def get_all(twitter_ids):
     """Get all tweets for all people in the twitter_ids dictionary"""

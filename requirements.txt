@@ -6,3 +6,5 @@ nltk
 wordcloud
 sklearn
 simplemma
+mmh3
+wordcloud
